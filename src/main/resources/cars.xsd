@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://dau.lam.net"
+           targetNamespace="http://dau.lam.net" elementFormDefault="qualified">
+
+    <xs:element name="getCarsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCarsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="car" type="tns:car"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="car">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="color" type="xs:string"/>
+            <xs:element name="fuelAmount" type="xs:int"/>
+            <xs:element name="carType" type="tns:CarType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="CarType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GAS"/>
+            <xs:enumeration value="ELECTRIC"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
