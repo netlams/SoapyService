@@ -9,11 +9,20 @@ public enum CarType {
 
     GAS,
     ELECTRIC;
-
+    
+    /**
+     * 
+     * @return 
+     */
     public String value() {
         return name();
     }
-
+    
+    /**
+     * 
+     * @param v
+     * @return 
+     */
     public static CarType fromValue(String v) {
         return valueOf(v);
     }

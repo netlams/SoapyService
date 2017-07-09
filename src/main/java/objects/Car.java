@@ -17,9 +17,13 @@ public class Car {
 
     @XmlElement(required = true)
     protected String name;
-	@XmlElement(required = true)
+    
+    @XmlElement(required = true)
     protected String color;
+    
+    @XmlElement(required = true)
     protected int fuelAmount;
+    
     @XmlElement(required = true)
     protected CarType carType;
 

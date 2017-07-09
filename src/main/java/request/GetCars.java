@@ -11,19 +11,17 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "name"
 })
+
 @XmlRootElement(namespace = "http://dau.lam.net/service", name = "getCars")
 public class GetCars {
-	
+
 			@XmlElement(required = true)
 		    protected String name;
 
 		    /**
 		     * Gets the value of the name property.
 		     * 
-		     * @return
-		     *     possible object is
-		     *     {@link String }
-		     *     
+		     * @return the name   
 		     */
 		    public String getName() {
 		        return name;
@@ -32,10 +30,7 @@ public class GetCars {
 		    /**
 		     * Sets the value of the name property.
 		     * 
-		     * @param value
-		     *     allowed object is
-		     *     {@link String }
-		     *     
+		     * @param value to set 
 		     */
 		    public void setName(String value) {
 		        this.name = value;

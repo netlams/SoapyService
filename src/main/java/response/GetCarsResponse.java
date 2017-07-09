@@ -7,24 +7,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import objects.Car;
+import objects.Response;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "car"
+    "car", 
+    "response"
 })
+
 @XmlRootElement(namespace = "http://dau.lam.net/service", name = "GetCarsResponse")
 public class GetCarsResponse {
 
     @XmlElement(required = true)
-    protected Car[] car;
+    protected Car[] car; // array list 
 
-    // public Car getCar() {
-    //     return car;
-    // }
-
-    // public void setCar(Car value) {
-    //     this.car = value;
-    // }
+    @XmlElement(required = true)
+    protected Response response = new Response();
 
     public Car[] getCars() {
         return car;
@@ -34,4 +32,11 @@ public class GetCarsResponse {
         this.car = value;
     }
 
+    public Response getResponse() {
+        return this.response;
+    }
+
+    public void setResponse(Response r) {
+        this.response = r;
+    }
 }

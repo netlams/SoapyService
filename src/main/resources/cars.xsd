@@ -1,6 +1,25 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://dau.lam.net/service"
            targetNamespace="http://dau.lam.net/service" elementFormDefault="qualified">
 
+    <xs:element name="createCar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="color" type="xs:string"/>
+                <xs:element name="fuelAmount" type="xs:int"/>
+                <xs:element name="carType" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCarResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="tns:response"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="getCars">
         <xs:complexType>
             <xs:sequence>
@@ -13,6 +32,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="car" type="tns:car" maxOccurs="unbounded" minOccurs="0" nillable="true"/>
+                <xs:element name="response" type="tns:response"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -22,14 +42,21 @@
             <xs:element name="name" type="xs:string"/>
             <xs:element name="color" type="xs:string"/>
             <xs:element name="fuelAmount" type="xs:int"/>
-            <xs:element name="carType" type="tns:CarType"/>
+            <xs:element name="carType" type="tns:carType"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="CarType">
+    <xs:simpleType name="carType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="GAS"/>
             <xs:enumeration value="ELECTRIC"/>
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:complexType name="Response">
+        <xs:sequence>
+            <xs:element name="respMsg" type="xs:string"/>
+            <xs:element name="respCode" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>

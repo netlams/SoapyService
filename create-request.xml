@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://dau.lam.net/service">
+   <soapenv:Header/>
+   <soapenv:Body >
+      <sch:createCar>
+         <name>Hummer H3</name>
+         <color>WHITE</color>
+         <fuelAmount>10</fuelAmount>
+         <carType>GAS</carType>
+      </sch:createCar>
+   </soapenv:Body>
+</soapenv:Envelope>
