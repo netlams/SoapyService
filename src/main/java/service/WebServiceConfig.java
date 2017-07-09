@@ -1,4 +1,4 @@
-package hello;
+package service;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -20,16 +20,16 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 		servlet.setApplicationContext(applicationContext);
 		servlet.setTransformWsdlLocations(true);
-		return new ServletRegistrationBean(servlet, "/ws/*");
+		return new ServletRegistrationBean(servlet, "/service/*");
 	}
 
 	@Bean(name = "cars")
-	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema carschema) {
+	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema carsSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("CarsPort");
-		wsdl11Definition.setLocationUri("/ws");
-		wsdl11Definition.setTargetNamespace("http://dau.lam.net");
-		wsdl11Definition.setSchema(countriesSchema);
+		wsdl11Definition.setLocationUri("/service");
+		wsdl11Definition.setTargetNamespace("http://dau.lam.net/service");
+		wsdl11Definition.setSchema(carsSchema);
 		return wsdl11Definition;
 	}
 

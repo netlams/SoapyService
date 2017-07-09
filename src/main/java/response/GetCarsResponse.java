@@ -12,33 +12,25 @@ import objects.Car;
 @XmlType(name = "", propOrder = {
     "car"
 })
-@XmlRootElement(name = "GetCarsResponse")
+@XmlRootElement(namespace = "http://dau.lam.net/service", name = "GetCarsResponse")
 public class GetCarsResponse {
 
     @XmlElement(required = true)
-    protected Car car;
+    protected Car[] car;
 
-    /**
-     * Gets the value of the country property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
-     */
-    public Car getCar() {
+    // public Car getCar() {
+    //     return car;
+    // }
+
+    // public void setCar(Car value) {
+    //     this.car = value;
+    // }
+
+    public Car[] getCars() {
         return car;
     }
 
-    /**
-     * Sets the value of the country property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setCar(Car value) {
+    public void setCars(Car[] value) {
         this.car = value;
     }
 

@@ -1,8 +1,8 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" >
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://dau.lam.net/service">
    <soapenv:Header/>
-   <soapenv:Body>
-      <getCarsRequest>
-         
-      </getCarsRequest>
+   <soapenv:Body >
+      <sch:getCars>
+         <name>SUBARU LEGACY</name>
+      </sch:getCars>
    </soapenv:Body>
 </soapenv:Envelope>
