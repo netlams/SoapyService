@@ -53,7 +53,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:complexType name="Response">
+    <xs:complexType name="response">
         <xs:sequence>
             <xs:element name="respMsg" type="xs:string"/>
             <xs:element name="respCode" type="xs:int"/>
