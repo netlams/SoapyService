@@ -26,7 +26,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 	@Bean(name = "cars")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema carsSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("CarsPort");
+		wsdl11Definition.setPortTypeName("CarSvcPort");
 		wsdl11Definition.setLocationUri("/service");
 		wsdl11Definition.setTargetNamespace("http://dau.lam.net/service");
 		wsdl11Definition.setSchema(carsSchema);

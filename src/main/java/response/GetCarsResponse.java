@@ -11,8 +11,8 @@ import objects.Response;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "car", 
-    "response"
+    "response",
+    "car"
 })
 
 @XmlRootElement(namespace = "http://dau.lam.net/service", name = "GetCarsResponse")
