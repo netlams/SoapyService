@@ -1,0 +1,24 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header />
+   <SOAP-ENV:Body>
+      <ns3:GetCarsResponse xmlns:ns3="http://dau.lam.net/service">
+         <response>
+            <respMsg>The operation completed successfully</respMsg>
+            <respCode>0</respCode>
+            <exceptionMsg />
+         </response>
+         <car>
+            <name>SUBARU LEGACY</name>
+            <color>BLACK</color>
+            <fuelAmount>0</fuelAmount>
+            <carType>GAS</carType>
+         </car>
+         <car>
+            <name>HONDA CIVIC</name>
+            <color>RED</color>
+            <fuelAmount>0</fuelAmount>
+            <carType>GAS</carType>
+         </car>
+      </ns3:GetCarsResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

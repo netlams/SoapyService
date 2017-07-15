@@ -1,0 +1,12 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header />
+   <SOAP-ENV:Body>
+      <ns3:CreateCarResponse xmlns:ns3="http://dau.lam.net/service">
+         <response>
+            <respMsg>The operation failed</respMsg>
+            <respCode>2</respCode>
+            <exceptionMsg>Invalid field values - Available carTypes are : [GAS, ELECTRIC]</exceptionMsg>
+         </response>
+      </ns3:CreateCarResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
