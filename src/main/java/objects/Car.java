@@ -22,7 +22,7 @@ public class Car {
     protected String color;
     
     @XmlElement(required = true)
-    protected int fuelAmount;
+    protected double fuelAmount;
     
     @XmlElement(required = true)
     protected CarType carType;
@@ -43,11 +43,11 @@ public class Car {
     	this.color = c;
     }
 
-    public int getFuelAmount() {
+    public double getFuelAmount() {
     	return this.fuelAmount;
     }
 
-    public void setFuelAmount(int f) {
+    public void setFuelAmount(double f) {
     	this.fuelAmount = f;
     }
 

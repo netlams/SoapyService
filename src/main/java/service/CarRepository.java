@@ -4,11 +4,14 @@ import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
-import objects.Car;
-import objects.CarType;
+import objects.*;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+/**
+* Load an instance of this class at startup
+*
+*/ 
 @Component
 public class CarRepository {
 
@@ -35,25 +38,33 @@ public class CarRepository {
 		cars.put(sedan2.getName(), sedan2);
 	}
 
-	public boolean createCar(String name, String color, int fuelAmt, String type) {
+	public boolean createCar(String name, String color, double fuelAmt, String type) {
 		try {
-			Car car = new Car();
-			car.setName(name.toUpperCase());
-			car.setColor(color.toUpperCase());
-			car.setFuelAmount(fuelAmt);
 
-			type = type.toUpperCase();
+			Car car = null;
 
 			switch (type) {
 				case "GAS" :
+					car = new GasolineFueledImp();
+					car.setName(name.toUpperCase());
+					car.setColor(color.toUpperCase());
+					car.setFuelAmount(fuelAmt);
+
+					type = type.toUpperCase();
 					car.setCarType(CarType.GAS);
 					break;
 				case "ELECTRIC" :
+					car = new ElectricFueledImp();
+					car.setName(name.toUpperCase());
+					car.setColor(color.toUpperCase());
+					car.setFuelAmount(fuelAmt);
+
+					type = type.toUpperCase();
 					car.setCarType(CarType.ELECTRIC);
 					break;
 			}
-			
-			cars.put(car.getName(), car);
+			if (car != null)
+				cars.put(car.getName(), car);
 
 			return true;
 		} catch (Exception ex ) {

@@ -12,7 +12,10 @@ import request.GetCarsRequest;
 import response.GetCarsResponse;
 import objects.Response;
 
-
+/**
+* Endpoint for all requests
+* 
+*/
 @Endpoint
 public class CarEndpoint {
 	private static final String NAMESPACE_URI = "http://dau.lam.net/service";

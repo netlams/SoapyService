@@ -6,7 +6,7 @@
             <xs:sequence>
                 <xs:element name="name" type="xs:string"/>
                 <xs:element name="color" type="xs:string"/>
-                <xs:element name="fuelAmount" type="xs:int"/>
+                <xs:element name="fuelAmount" type="xs:double"/>
                 <xs:element name="carType" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
@@ -37,11 +37,12 @@
         </xs:complexType>
     </xs:element>
 
+
     <xs:complexType name="car">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="color" type="xs:string"/>
-            <xs:element name="fuelAmount" type="xs:int"/>
+            <xs:element name="fuelAmount" type="xs:double"/>
             <xs:element name="carType" type="tns:carType"/>
         </xs:sequence>
     </xs:complexType>
