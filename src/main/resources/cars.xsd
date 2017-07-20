@@ -36,7 +36,40 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <xs:element name="startCarRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
+    <xs:element name="startCarResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="tns:response"/>
+                <xs:element name="result" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getZeroToSixtyRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getZeroToSixtyResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="tns:response"/>
+                <xs:element name="speed" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <xs:complexType name="car">
         <xs:sequence>

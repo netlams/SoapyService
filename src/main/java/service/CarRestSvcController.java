@@ -25,7 +25,7 @@ public class CarRestSvcController {
 		this.carRepository = carRepository;
 	}
 
-    @RequestMapping(value="/rest/cars", method=RequestMethod.POST)
+    @RequestMapping(value="/restws/cars", method=RequestMethod.POST)
     public ResponseEntity<Response> createCar(@RequestBody Car request) {
     	System.out.println("Creating car: " + request.getName());
     	Response respData = new Response();
@@ -52,7 +52,7 @@ public class CarRestSvcController {
 		
     }
 
-    @RequestMapping(value="/rest/cars", method=RequestMethod.GET)
+    @RequestMapping(value="/restws/cars", method=RequestMethod.GET)
     public Car[] getCars(@RequestParam(value="name", defaultValue="*") String name) {
     	if (name.equals("*"))
         	return carRepository.getCars();
@@ -60,7 +60,7 @@ public class CarRestSvcController {
         	return carRepository.getCar(name);
     }
 
-    @RequestMapping(value="/rest/start", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/restws/start", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> startCar(@RequestParam(value="name", defaultValue="*") String name) {
     	try {
     		Boolean result = (Boolean)carRepository.startCar(name);
@@ -76,12 +76,12 @@ public class CarRestSvcController {
     	} 
     }
 
-    @RequestMapping(value="/rest/zerotosixty", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/restws/zerotosixty", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getZeroToSixtySpeed(@RequestParam(value="name") String name) {
     	try {
 	        Double result = (Double)carRepository.getZeroToSixtySpeed(name);
 	        
-	    	String response = "{" 	+ "\"result\": " 
+	    	String response = "{" 	+ "\"speed\": " 
 	    				+ result.toString()
 	    				+ "}";
 	    	return new ResponseEntity<String>(response, HttpStatus.OK);

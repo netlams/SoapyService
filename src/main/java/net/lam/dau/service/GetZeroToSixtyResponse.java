@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="response" type="{http://dau.lam.net/service}response"/>
+ *         &lt;element name="speed" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,13 +37,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "response"
+    "response",
+    "speed"
 })
-@XmlRootElement(name = "createCarResponse")
-public class CreateCarResponse {
+@XmlRootElement(name = "getZeroToSixtyResponse")
+public class GetZeroToSixtyResponse {
 
     @XmlElement(required = true)
     protected Response response;
+    protected double speed;
 
     /**
      * Gets the value of the response property.
@@ -66,6 +69,22 @@ public class CreateCarResponse {
      */
     public void setResponse(Response value) {
         this.response = value;
+    }
+
+    /**
+     * Gets the value of the speed property.
+     * 
+     */
+    public double getSpeed() {
+        return speed;
+    }
+
+    /**
+     * Sets the value of the speed property.
+     * 
+     */
+    public void setSpeed(double value) {
+        this.speed = value;
     }
 
 }

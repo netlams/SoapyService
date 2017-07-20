@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="response" type="{http://dau.lam.net/service}response"/>
+ *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,13 +37,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "response"
+    "response",
+    "result"
 })
-@XmlRootElement(name = "createCarResponse")
-public class CreateCarResponse {
+@XmlRootElement(name = "startCarResponse")
+public class StartCarResponse {
 
     @XmlElement(required = true)
     protected Response response;
+    protected boolean result;
 
     /**
      * Gets the value of the response property.
@@ -66,6 +69,22 @@ public class CreateCarResponse {
      */
     public void setResponse(Response value) {
         this.response = value;
+    }
+
+    /**
+     * Gets the value of the result property.
+     * 
+     */
+    public boolean isResult() {
+        return result;
+    }
+
+    /**
+     * Sets the value of the result property.
+     * 
+     */
+    public void setResult(boolean value) {
+        this.result = value;
     }
 
 }

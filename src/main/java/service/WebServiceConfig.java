@@ -20,14 +20,14 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 		servlet.setApplicationContext(applicationContext);
 		servlet.setTransformWsdlLocations(true);
-		return new ServletRegistrationBean(servlet, "/service/*");
+		return new ServletRegistrationBean(servlet, "/soapws/*");
 	}
 
 	@Bean(name = "cars")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema carsSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("CarSvcPort");
-		wsdl11Definition.setLocationUri("/service");
+		wsdl11Definition.setLocationUri("/soapws");
 		wsdl11Definition.setTargetNamespace("http://dau.lam.net/service");
 		wsdl11Definition.setSchema(carsSchema);
 		return wsdl11Definition;

@@ -6,10 +6,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import request.CreateCarRequest;
-import response.CreateCarResponse;
-import request.GetCarsRequest;
-import response.GetCarsResponse;
+import request.*;
+import response.*;
 import objects.Response;
 
 /**
@@ -65,6 +63,56 @@ public class CarSoapSvcEndpoint {
 		// get all objects in memory
 		else {
 			response.setCars(carRepository.getCars());
+		}
+
+		return response;
+	}
+
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "startCarRequest")
+	@ResponsePayload
+	public StartCarResponse startCar(@RequestPayload StartCarRequest request) {
+
+		StartCarResponse response = new StartCarResponse();
+
+		// optional name field
+		if (request.getName() != null && request.getName().length() > 0 ) {
+			try {
+				Boolean result = (Boolean)carRepository.startCar(request.getName());
+				response.setResult(result.booleanValue());
+			} catch (NullPointerException ex) {
+				Response respData = new Response("The operation failed", 1, " Missing required fields");
+				response.setResponse(respData);
+			}
+		}
+		// get all objects in memory
+		else {
+			Response respData = new Response("The operation failed", 1, " Missing required fields");
+			response.setResponse(respData);
+		}
+
+		return response;
+	}
+
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getZeroToSixtyRequest")
+	@ResponsePayload
+	public GetZeroToSixtyResponse getZeroToSixty(@RequestPayload GetZeroToSixtyRequest request) {
+
+		GetZeroToSixtyResponse response = new GetZeroToSixtyResponse();
+
+		// optional name field
+		if (request.getName() != null && request.getName().length() > 0 ) {
+			try {
+				Double result = (Double)carRepository.getZeroToSixtySpeed(request.getName());
+				response.setSpeed(result.doubleValue());
+			} catch (NullPointerException ex) {
+				Response respData = new Response("The operation failed", 1, " Missing required fields");
+				response.setResponse(respData);
+			}
+		}
+		// get all objects in memory
+		else {
+			Response respData = new Response("The operation failed", 1, " Missing required fields");
+			response.setResponse(respData);
 		}
 
 		return response;
