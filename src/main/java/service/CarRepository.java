@@ -21,7 +21,7 @@ public class CarRepository {
 	@PostConstruct
 	public void initData() {
 		// creation of default  initial data
-		Car sedan = new Car();
+		Car sedan = new GasolineFueledImp();
 		sedan.setName("HONDA CIVIC");
 		sedan.setColor("RED");
 		sedan.setFuelAmount(0);
@@ -29,7 +29,7 @@ public class CarRepository {
 
 		cars.put(sedan.getName(), sedan);
 
-		Car sedan2 = new Car();
+		Car sedan2 = new GasolineFueledImp();
 		sedan2.setName("SUBARU LEGACY");
 		sedan2.setColor("BLACK");
 		sedan2.setFuelAmount(0);
@@ -133,5 +133,27 @@ public class CarRepository {
      */
 	public double getZeroToSixtySpeed(String name) {
 		return cars.get(name).zeroToSixty();
+	}
+
+	/**
+     * Charge an electric car
+     *
+     * @param name
+     * @return double
+     */
+	public boolean chargeEnergy(String name) {
+		ElectricFueledImp temp = (ElectricFueledImp)cars.get(name);
+		return temp.chargeEnergy();
+	}
+
+	/**
+     * Fuel a gas car
+     *
+     * @param name
+     * @return double
+     */
+	public boolean fuelGas(String name) {
+		GasolineFueledImp temp = (GasolineFueledImp)cars.get(name);
+		return temp.fuelGas('E'); // else
 	}
 }

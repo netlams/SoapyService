@@ -90,4 +90,41 @@ public class CarRestSvcController {
         	return new ResponseEntity<String>("", HttpStatus.NO_CONTENT);
         }
     }
+
+    @RequestMapping(value="/restws/charge", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> chargeEnergy(@RequestParam(value="name") String name) {
+    	try {
+	        Boolean result = (Boolean)carRepository.chargeEnergy(name);
+	        double fuelAmt = carRepository.getCar(name)[0].getFuelAmount();
+	        
+	    	String response = "{" 	
+	    				+ "\"result\": " 
+	    				+ result.toString() 
+	    				+ ",  \"fuelAmount\": " + fuelAmt
+	    				+ "}";
+	    	return new ResponseEntity<String>(response, HttpStatus.OK);
+        }
+        catch (Exception ex) {
+        	return new ResponseEntity<String>("", HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @RequestMapping(value="/restws/fuel", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> fuelGas(@RequestParam(value="name") String name) {
+    	try {
+	        Boolean result = (Boolean)carRepository.fuelGas(name);
+	        double fuelAmt = carRepository.getCar(name)[0].getFuelAmount();
+	        
+	    	String response = "{" 	
+	    				+ "\"result\": " 
+	    				+ result.toString() 
+	    				+ ",  \"fuelAmount\": " + fuelAmt
+	    				+ "}";
+	    	return new ResponseEntity<String>(response, HttpStatus.OK);
+        }
+        catch (Exception ex) {
+        	return new ResponseEntity<String>("", HttpStatus.NO_CONTENT);
+        }
+    }
+
 }
