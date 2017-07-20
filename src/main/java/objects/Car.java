@@ -58,4 +58,15 @@ public class Car {
     public void setCarType(CarType c) {
     	this.carType = c;
     }
+
+    public boolean start() {
+        if (this.fuelAmount == 0)
+            return false;
+        else
+            return true;
+    }
+
+    public double zeroToSixty() {
+        return 6.0;
+    }
 }

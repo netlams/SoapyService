@@ -38,9 +38,14 @@ public class CarRepository {
 		cars.put(sedan2.getName(), sedan2);
 	}
 
+	/**
+     * Creates the car and add to memory
+     *
+     * @param name, color, fuelAmt, type
+     * @return boolean
+     */
 	public boolean createCar(String name, String color, double fuelAmt, String type) {
 		try {
-
 			Car car = null;
 
 			switch (type) {
@@ -63,10 +68,12 @@ public class CarRepository {
 					car.setCarType(CarType.ELECTRIC);
 					break;
 			}
-			if (car != null)
-				cars.put(car.getName(), car);
-
-			return true;
+			if (car != null) {
+				cars.put(car.getName(), car); // car created
+				return true;
+			}
+			else { return false; }
+				
 		} catch (Exception ex ) {
 			return false;
 		}
@@ -88,7 +95,7 @@ public class CarRepository {
     /**
      * Returns an array of all cars 
      *
-     * @return 
+     * @return an array of cars
      */
 	public Car[] getCars() {	
 		// get all car names
@@ -106,5 +113,25 @@ public class CarRepository {
 		}
 
 		return array;
+	}
+
+	/**
+     * Start the specific car
+     *
+     * @param name
+     * @return boolean
+     */
+	public boolean startCar(String name) {
+		return cars.get(name).start();
+	}
+
+	/**
+     * Get the zero to sixty speed for the specific car
+     *
+     * @param name
+     * @return double
+     */
+	public double getZeroToSixtySpeed(String name) {
+		return cars.get(name).zeroToSixty();
 	}
 }
