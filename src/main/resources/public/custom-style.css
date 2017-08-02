@@ -1,0 +1,202 @@
+/*
+* author: Dau Lam
+* Disclaimer: I do not own any of the images and pictures used.
+*/
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans');
+
+html, body {
+	min-width: 320px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #061b1c;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.headers {
+	color: white;
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+/* #1 Custom Rule */
+.navbar-default {
+    background-color: #061b1c;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    border-radius: 0;
+}
+
+/* #2 Custom Rule */
+.navbar-default .navbar-brand {
+	color: white;
+    background-color: #061b1c;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 24px;
+    /*border: 2px solid darkgrey;*/
+}
+
+/* #3 Custom Rule */
+.nav.navbar-nav>li {
+	color: white;
+	text-align: center;
+	width: 130px;
+	-webkit-transition: width 1s; /* Chrome, Safari, Opera  */
+    transition: width 1s;
+}
+
+.nav.navbar-nav>li:hover {
+	width: 180px;
+	opacity: 80%;
+	background-color: white;
+}
+
+.nav.navbar-nav>li>a {
+	color: white;
+	font-weight: 400;
+}
+
+/* single page design container */
+.sng-page-container {
+	position: relative;
+	max-width: 100%;
+	margin-bottom: 180px; /* leave room for 180px tall footer, unless you want a full page for it */
+	z-index: 1;
+}
+
+/* single page */
+.sng-page {
+    min-height: 500px; /* fallout for older browsers */
+    min-height: 100vh;
+	padding-left: 1.0em;
+	padding-right: 1.0em;
+}
+
+#footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #061b1c;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  height: 180px;
+  z-index: 0;
+}
+
+#footer a {
+	text-decoration: none;
+	color: white;
+}
+
+#footer a:hover {
+	color: yellow;
+}
+
+.footer-heading {
+	font-family: 'Julius Sans One', sans-serif;
+	text-transform: capitalize;
+	font-size: 2.0em;
+	letter-spacing: 1px;
+	padding-top: 1em;
+}
+
+/* #4 Custom Rule */
+#my-first.jumbotron {
+	background-image: url("images/car-cover.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    text-shadow: 0px 2px 2px #202020;
+    margin-bottom: 0;
+}
+
+#my-first.jumbotron a.btn {
+    font-family: sans-serif;
+    font-weight: 900;
+    background-color: transparent;
+    border: 1px solid white;
+    font-family: 'Julius Sans One', sans-serif;
+    opacity: 0.9;
+    border-radius: 12px; 
+}
+
+#my-first.jumbotron a.btn:hover {
+    opacity: 1.0;
+}
+
+.black-star {
+	color: black;
+}
+
+.my-vertical-center {
+	min-height: 100%;  /* fallback for browsers do NOT support vh unit */
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding-top: 5%;
+}
+
+.signup-form {
+    text-align: center;
+    width: 100%;
+    max-width: 480px;
+    margin: 1em auto 0 auto;
+}
+
+#my-form {
+	min-height: 400px;
+	background-image: url("images/side-by-side.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.shadow {
+	text-shadow: 1px 2px 2px #000;
+}
+
+/* some background */
+.white-bg {
+	background-color: white;
+}
+
+.black-bg {
+	background-color: #061b1c;
+}
+
+/* Responsive Rule: between large and medium screen */
+@media all and (min-width: 480px) and (max-width: 768px) {
+	.sng-page.my-vertical-center {
+		height: 90vh;
+		min-height: 300px;
+	}
+	/* #5 Custom Rule */
+	/* prevent prevent movie-poster img from being too wide */
+	.img-responsive.my-movie-poster {
+		width: 360px; /* try taking me out */
+	}
+}
+
+/* Responsive Rule: larger than 992px screen */
+@media all and (min-width: 992px) {
+	/* prevent movie-poster img from being too big */
+	.img-responsive.my-movie-poster {
+		height: 300px; /* try taking me out */
+	}
+}
+
+/* Responsive Rule: larger than 992px screen */
+@media all and (max-width: 480px) {
+	/* prevent movie-poster img from being too big */
+	.sng-page.my-vertical-center {
+		height: 65vh;
+		min-height: 300px;
+	}
+}
