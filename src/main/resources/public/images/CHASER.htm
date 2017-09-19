@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="carApp">
-  <head>
-    <meta charset="utf-8">
+<!-- saved from url=(0088)file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html -->
+<html lang="en" ng-app="carApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>CHASER</title>
-    <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+    <link rel="shortcut icon" type="image/x-icon" href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/images/favicon.ico">
     <!-- import Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="./CHASER_files/bootstrap.min.css" rel="stylesheet">
     <!-- import custom theme on top of Bootstrap -->
-    <link href="custom-style.css" rel="stylesheet">
+    <link href="./CHASER_files/custom-style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,31 +20,27 @@
     <![endif]-->
   </head>
 
-  <body ng-controller="mainController">
+  <body ng-controller="mainController" class="ng-scope">
     <!-- Navigation bar -->
     <nav id="nav" class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <!-- button only appears when in mobile view -->
-                <button type="button" class="navbar-toggle collapsed"
-                        data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1"
-                        aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <!--Website Brand -->
-                <a class="navbar-brand" href="index.html">CHASER</a>
+                <a class="navbar-brand" href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html">CHASER</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <!-- the navigation items -->
                 <ul class="nav navbar-nav">
-                    <li><a href="#my-first">Home</a></li>
-                    <li><a href="#my-data">Car List</a></li>
-                    <li><a href="#my-form">Creation Form</a></li>
-                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html#my-first">Home</a></li>
+                    <li><a href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html#my-data">Car List</a></li>
+                    <li><a href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html#my-form">Creation Form</a></li>
                 </ul>
             </div>
         </div>
@@ -57,7 +53,7 @@
             <div class="container text-center">
                 <h1 class="shadow" id="site-header-name">C H A S E R</h1>
                 <p class="shadow" id="site-header-subname">Gigafactory Car Production Service</p>
-                <p><a class="btn btn-primary btn-lg" href="#my-data" role="button">next</a></p>
+                <p><a class="btn btn-primary btn-lg" href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html#my-data" role="button">next</a></p>
              </div>
         </section> <!-- end first page -->
 
@@ -74,15 +70,15 @@
                         <!-- next define how much column to take for each width -->
                         <div class="col-xs-12 col-sm-6 col-md-4">
                             <!-- .thumbnail gives a border, margin:auto, and img will be 100% max-width -->
-                            <a href="#" class="thumbnail">
+                            <a href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html#" class="thumbnail">
                                 <!-- Makes this img responsive to column width -->
-                                <img class="img-responsive my-movie-poster" src="images/car1.jpg">
+                                <img class="img-responsive my-movie-poster" src="./CHASER_files/car1.jpg">
                             </a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-8">
                             <!-- You could define columns inside of column -->
                             <div class="col-xs-12 col-md-12">
-                                <h1 class="data-name">FORD MUSTANG</h2>
+                                <h1 class="data-name">FORD MUSTANG</h1>
                             </div>
                             <div class="col-xs-12 col-md-12">
                                 <h2>
@@ -122,92 +118,40 @@
             </div> <!-- end set of data -->
 
             <!-- set of data -->
-            <div class="panel panel-primary" ng-repeat="car in list track by $index">
-                <div class="panel-body" id="car-{{$index}}">
-                    <!-- first define a row -->
-                    <div class="row">
-                        <!-- next define how much column to take for each width -->
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <!-- .thumbnail gives a border, margin:auto, and img will be 100% max-width -->
-                            <a href="#" class="thumbnail">
-                                <!-- Makes this img responsive to column width -->
-                                <img class="img-responsive my-movie-poster" src="images/car2.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-8">
-                            <!-- You could define columns inside of column -->
-                            <div class="col-xs-12 col-md-12">
-                                <h1 class="data-name">{{car.name}}</h2>
-                            </div>
-                            <div class="col-xs-12 col-md-12">
-                                <h2>
-                                    <span class="label label-primary">Rating
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star black-star"></span>
-                                    </span>
-                                </h2>
-                            </div>
-                            <div class="col-xs-12 col-md-12">
-                                <p>Fuel Amount: 
-                                    <span class="data-fuelamt">
-                                        {{car.fuelAmount}}
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="col-xs-12 col-md-12">
-                                <p>Color: 
-                                    <span class="data-color">
-                                        {{car.color}}
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="col-xs-12 col-md-12">
-                                <p>Car Type: 
-                                    <span class="data-cartype">
-                                        {{car.carType}}
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end set of data -->
+            <!-- ngRepeat: car in list track by $index --> <!-- end set of data -->
         </section> <!-- end sets of data -->
 
         <!-- my form -->
         <section id="my-form" class="container-fluid sng-page black-bg">
-            <form ng-submit="submit()" class="signup-form" id="create-car-form">
+            <form ng-submit="submit()" class="signup-form ng-pristine ng-invalid ng-invalid-required" id="create-car-form">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Create your Dream Car</div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name">Name*</label>
-                                <input class="form-control" id="name" type="text" ng-model="car.name" required>
+                                <input class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="name" type="text" ng-model="car.name" required="">
                             </div>
                              <div class="form-group col-md-6">
                                 <label for="color">Color*</label>
-                                <input class="form-control" id="color" type="text" ng-model="car.color" rrequired>
+                                <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="color" type="text" ng-model="car.color" rrequired="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="fuelAmount">Fuel Amount</label>
-                            <input class="form-control" id="fuelAmount" type="number" ng-model="car.fuelAmount" required>
+                            <input class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="fuelAmount" type="number" ng-model="car.fuelAmount" required="">
                         </div>
                         <div class="form-group">
                             <label for="carType">Car Type</label>
-                            <select id="carType" ng-model="car.carType">
-                                <option value="GAS" selected="selected">GAS</option>
+                            <select id="carType" ng-model="car.carType" class="ng-pristine ng-untouched ng-valid ng-empty"><option value="? object:null ?" selected="selected"></option>
+                                <option value="GAS">GAS</option>
                                 <option value="ELECTRIC">ELECTRIC</option>
                             </select>
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="Submit">
                         <input class="btn btn-default" type="reset" value="Reset">
-                        <p ng-show="formMsg">{{formMsg}}</p>
+                        <p ng-show="formMsg" class="ng-binding ng-hide"></p>
                     </div>
                 </div>
             </form>
@@ -225,7 +169,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="text-center">
-                                        <img class="img img-responsive" src="images/automation-icon.png" alt="">
+                                        <img class="img img-responsive" src="./CHASER_files/automation-icon.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -237,36 +181,33 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="text-center">
-                                        <img class="img img-responsive" src="images/driverless-icon.png" alt="">
+                                        <img class="img img-responsive" src="./CHASER_files/driverless-icon.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-9">
                                     <h2 id="about-us-subtitle-2">Performance and safety refined</h2>
                                     <p id="about-us-statement-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis repellat recusandae, magni. Sunt velit suscipit perferendis saepe, eaque non quas doloribus laborum, veritatis enim aut repellat, corporis similique dolore!</p>
                                 </div>
-                            </div>  
-                            <br/>
-                            <button id="newsletter-subscribe" type="button" class="btn btn-primary" ng-click="showNewsletterMenu()">Subscribe to our newsletter</button>           
+                            </div>                        
                     </div>
-                    <div class="col-md-5" >
+                    <div class="col-md-5">
                         <div class="text-center">
-                            <img src="images/interior-sketch.jpg" alt="interior sketch">
+                            <img src="./CHASER_files/interior-sketch.jpg" alt="interior sketch">
                         </div>
                     </div>
                     </div>
                 </div>
             </div>
             
-            <div id="newsletter" class="text-center">
-               <form class="form-inline signup-form" ng-show="showNewsletterMenuBoolean">
+            <div>
+               <form id="newsletter" class="form-inline signup-form ng-dirty ng-valid-parse ng-valid ng-valid-required ng-submitted">
                   <div class="form-group mx-sm-3">
                     <label for="newsletter-email" class="sr-only">Enter your email</label>
-                    <input type="text" class="form-control" id="newsletter-email" ng-model="enteredEmail" placeholder="Enter your email" required>
+                    <input type="password" class="form-control ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" id="newsletter-email" ng-model="enteredEmail" placeholder="Enter your email" required="">
                   </div>
-                  <button type="button" class="btn btn-primary" ng-click="validateEmail()">Subscribe</button>
-                  
+                  <button type="submit" class="btn btn-primary">Subscribe</button>
+                  <p ng-show="formMsg" class="ng-binding ng-hide"></p>
                 </form>
-                <p ng-show="newsletterMsg">{{newsletterMsg}}</p>
             </div>
 
         </section>  <!-- end my form -->
@@ -276,16 +217,16 @@
     <!-- Footer -->
     <div id="footer">
         <div class="container text-center">
-            <h2 class="footer-heading"><a href="#content">CHASER Cars</a></h2>
-            <p><img src="images/cars.gif" style="width:77px"></p>
-            <p>&copy; 2017 Dau Lam</p>
+            <h2 class="footer-heading"><a href="file:///Users/Lam/Desktop/spring-soap/SoapyWService/src/main/resources/public/index.html#content">CHASER Cars</a></h2>
+            <p><img src="./CHASER_files/cars.gif" style="width:77px"></p>
+            <p>© 2017 Dau Lam</p>
         </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./CHASER_files/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="vendor-js/bootstrap.min.js"></script>
+    <script src="./CHASER_files/bootstrap.min.js"></script>
 
     <script>
     $(document).ready(function() {
@@ -307,7 +248,8 @@
     </script>
     <!-- Angular -->
     <!-- // <script src="vendor-js/angular.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="js/mainController.js"></script>
-  </body>
-</html>
+    <script src="./CHASER_files/angular.min.js"></script>
+    <script src="./CHASER_files/mainController.js"></script>
+  
+
+</body></html>
